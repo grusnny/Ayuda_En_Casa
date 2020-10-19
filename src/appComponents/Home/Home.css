@@ -1,0 +1,10 @@
+.leaflet-container{
+    width:100%;
+    height:100vh;
+}
+
+.card-subtitle{
+    visibility: hidden;  
+     size: 0pt;
+     height: 0pt;
+  }
