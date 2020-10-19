@@ -38,7 +38,27 @@ class Register extends Component {
     }
 
     // AWS Cognito integration here
-    
+    const {username, email, password}=this.state;
+    try{
+      const singUpResponse = await Auht.singUp({
+        username,
+        password,
+        attribute:{
+          email: email
+        }
+      });
+      console.log(singUpResponse);
+      this.props.history.push("/welcome");
+    }catch(error){
+      let err = null;
+      !error.message ? err ={"message":error}: err=error;
+      this.setState({
+        errors:{
+          ...this.state.errors,
+          cognito: err
+        }
+      });
+    }
   };
 
   onInputChange = event => {
