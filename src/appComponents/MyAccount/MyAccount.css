@@ -1,0 +1,23 @@
+
+          .contenedor {
+            margin: 0 0 5rem;
+            height: 10rem;
+            display: flex;
+            /* align-items por defecto tiene el valor `stretch` */
+            align-items: start;
+          }
+          .center-h {
+            justify-content: left;
+          }
+          .center-v {
+            align-items: center;
+            
+          }
+          .others{
+            text-align: left;
+            margin-top: 10rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            margin-left: 2rem;
+            
+          }
