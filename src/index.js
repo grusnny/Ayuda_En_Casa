@@ -4,6 +4,17 @@ import 'bulma/css/bulma.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Amplyfy from 'aws-amplify';
+import config from './config.json';
+
+Amplyfy.configure({
+    Auth: {
+        mandatorySignId: true,
+        region: config.cognito.REGION,
+        userPoolId:config.cognito.USER_POOL_ID,
+        userClientId: config.cognito.APP_CLIENT_ID
+    }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
