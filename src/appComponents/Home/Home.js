@@ -82,19 +82,29 @@ function Home() {
     return (
         <div className="App">
             <Container className='text-left'>
-                <ButtonDropdown direction="right" isOpen={btnDropright} toggle={toggle}>
-                    <DropdownToggle caret>
-                        Categorias
-      </DropdownToggle>
-                    <DropdownMenu>
-                        <DropdownItem header>Selecciona una nueva categoria</DropdownItem>
-                        <DropdownItem> <a class="nav-link" href="/albanil">Albañiles</a></DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem> <a class="nav-link" href="/Home">Electricistas</a></DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem> <a class="nav-link" href="/plomero">Plomeros</a></DropdownItem>
-                    </DropdownMenu>
-                </ButtonDropdown>
+                <div class="dropdown is-active">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Categorias</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                        <a href="/albanil" class="dropdown-item">
+                            Albañiles
+                        </a>
+                        <a href="/Home" class="dropdown-item">
+                            Electricista
+                        </a>
+                        <a href="/plomero" class="dropdown-item is-active">
+                            Plomeros
+                        </a>
+                        </div>
+                    </div>
+                    </div>
                 <Map center={[6.267417, -75.568389]} zoom={15}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -121,17 +131,39 @@ function Home() {
                             }}
                         >
                             <div>
-                                <Card style={{ width: '12rem' }}>
-                                    <CardImg top width="5%" src={foto = activeWorker.photo} />
-                                    <CardBody>
-                                        <CardTitle>Nombre: {name = activeWorker.name}</CardTitle>
-                                        <CardSubtitle>Correo: {mail = activeWorker.mail}</CardSubtitle>
-                                        <CardText>Profesión: {profession = activeWorker.profession}</CardText>
-                                        <CardSubtitle>Telefono: {tel = activeWorker.telephone}</CardSubtitle>
-                                        <CardSubtitle>{wid = activeWorker.uId}</CardSubtitle>
-                                        <button type="button" className="btn btn-outline-primary" onClick={onE} >Contactar</button>
-                                    </CardBody>
-                                </Card>
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                        <img src={foto = activeWorker.photo} alt="Worker"/>
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <figure class="image is-48x48">
+                                                <img src={foto = activeWorker.photo} alt="Worker"/>
+                                                </figure>
+                                            </div>
+                                            <div class="media-content">
+                                                <p class="title is-4">{activeWorker.name}</p>
+                                                <p class="subtitle is-6">{activeWorker.mail}</p>
+                                                <p class="subtitle is-6">{activeWorker.profession}</p>
+                                                <p class="subtitle is-6">{tel = activeWorker.telephone}</p>
+                                                <p class="subtitle is-6">{wid = activeWorker.uId}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="content">
+                                        <div class="buttons">
+                                            <button class="button is-primary" onClick={onE}>Contactar</button>
+                                        </div>
+                                            <a href="#">#css</a> <a href="#">#responsive</a>
+                                            <br>
+                                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                            </br>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </Popup>
                     )}
