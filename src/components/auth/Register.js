@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
-
+import {Auht} from 'aws-amplify';
 class Register extends Component {
   state = {
     username: "",
@@ -38,6 +38,7 @@ class Register extends Component {
     }
 
     // AWS Cognito integration here
+    
   };
 
   onInputChange = event => {

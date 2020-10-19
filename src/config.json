@@ -1,5 +1,10 @@
 {
   "api": { 
-    "invokeUrl": "https://5bltcq602h.execute-api.us-west-2.amazonaws.com/prod"
-  } 
+    "invokeUrl": "https://ayudaencasa.auth.us-east-1.amazoncognito.com/"
+  },
+  "cognito":{
+    "REGION":"us-east-1",
+    "USER_POOL_ID":"us-east-1_RiONXNSDt",
+    "APP_CLIENT_ID":"3i8h7hk025hut5o5sdncbqbi8"
+  }
 }
